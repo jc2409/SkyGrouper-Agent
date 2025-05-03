@@ -5,9 +5,9 @@ from typing import Dict, Any, Optional
 from dotenv import load_dotenv
 
 
-def create_search_session(originPlace :str, destinationPlace :str, outboundYear :int, outboundMonth :int, outboundDay :int) -> Optional[Dict[str, Any]]:
+def create_search_session(originPlace: str, destinationPlace: str, outboundYear: int, outboundMonth: int, outboundDay: int) -> Optional[Dict[str, Any]]:
     """
-    Search for live flight prices using Skyscanner API.
+    Initiates a flight search session with the Skyscanner API to retrieve live ticket prices.
 
     Args:
         originPlace: Place where the user is flying from
@@ -33,9 +33,9 @@ def create_search_session(originPlace :str, destinationPlace :str, outboundYear 
     # Request payload
     payload: Dict[str, Any] = {
         "query": {
-            "market": "ES",
+            "market": "UK",
             "locale": "en-GB",
-            "currency": "EUR",
+            "currency": "GBP",
             "queryLegs": [
                 {
                     "origin_place_id": {
