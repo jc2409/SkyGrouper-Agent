@@ -64,7 +64,7 @@ def create_search_session(originPlace: str, destinationPlace: str, outboundYear:
         # Check if the request was successful
         response.raise_for_status()
         results = response.json()
-        print(json.dumps(results, indent=4))
+        # print(json.dumps(results, indent=4))
         return results
 
     except requests.exceptions.HTTPError as e:
