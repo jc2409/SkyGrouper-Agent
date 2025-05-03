@@ -1,5 +1,6 @@
 import os
 import json
+import time
 from typing import Dict, Any, Optional
 from dotenv import load_dotenv
 from apify_client import ApifyClient
@@ -32,9 +33,19 @@ def airbnb_scraper(location: str, checkin_date: str, checkout_date: str, num_adu
         "adults": num_adults,
         "priceMax": priceMax
     }
-    
-    run = client.actor("NDa1latMI7JHJzSYU").call(run_input=run_input, wait_secs=2)
+
+    run = client.actor("NDa1latMI7JHJzSYU").start(run_input=run_input, wait_for_finish=8)
+    run_id = run["id"]
+    dataset_id = run.get("defaultDatasetId")
+
+    client.run(run_id).abort()
+
+    items = [] 
+    if dataset_id:
+        items = client.dataset(dataset_id).list_items().items
+    return items
         
 
 if __name__ == "__main__":
-    airbnb_scraper("London", "2025-07-01", "2025-07-06", 4, 600)
+    dataset_items = airbnb_scraper("London", "2025-07-01", "2025-07-06", 4, 600)
+    print(dataset_items)

@@ -1,5 +1,7 @@
-import asyncio
 import os
+os.environ["OPENAI_AGENTS_DISABLE_TRACING"] = "1"
+
+import asyncio
 import shutil
 import subprocess
 import time
@@ -8,8 +10,12 @@ from agents import Agent, Runner
 from agents.mcp import MCPServer, MCPServerSse
 from agents.model_settings import ModelSettings
 from dotenv import load_dotenv
+from agents import set_default_openai_key
 
 load_dotenv()
+
+api_key = os.environ.get("OPENAI_API_KEY")
+set_default_openai_key(api_key)
 
 async def run(mcp_server: MCPServer):
     agent = Agent(
@@ -20,7 +26,7 @@ async def run(mcp_server: MCPServer):
         model_settings=ModelSettings(tool_choice="required"),
     )
     
-    message = "I am leaving from the London Gatwick Airport and will travel to Barcelona between July 7th 2025 and July 10th 2025. What would be the return ticket price for that?"
+    message = "I am leaving from the London Gatwick Airport and will travel to Barcelona between July 7th 2025 and July 10th 2025. What would be the return ticket price for that? Recommend me some locations to stay as well my budget is under £800"
     print(f"Running: {message}")
     result = await Runner.run(starting_agent=agent, input=message)
     print(result.final_output)
@@ -31,6 +37,7 @@ async def main():
         params={
             "url": "http://localhost:8000/sse",
         },
+        client_session_timeout_seconds=30,
     ) as server:
         await run(server)
             
