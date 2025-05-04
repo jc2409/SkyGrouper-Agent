@@ -4,7 +4,7 @@ from datetime import date
 from flask import Flask, request, jsonify
 from shortlister import ShortlisterSync
 from agent_helpers import ask_agent
-from data_retrieve import get_data
+from MongoDB.data_retrieve import get_data
 from flask_cors import CORS
 
 app = Flask(__name__)
