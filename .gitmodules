@@ -1,6 +1,6 @@
 [submodule "page/SkyGrouper"]
 	path = page/SkyGrouper
-	url = https://github.com/joelcalm/SkyGrouper/tree/master
+	url = https://github.com/joelcalm/SkyGrouper.git
 [submodule "page/SkyGroups"]
 	path = page/SkyGroups
 	url = https://github.com/aimanhimi/SkyGroups.git
