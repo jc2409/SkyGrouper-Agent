@@ -108,4 +108,4 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 
 ---
 
-*Developed during the HackUPC Hackthon*
+*Developed during the HackUPC Hackthon in Barcelona*
