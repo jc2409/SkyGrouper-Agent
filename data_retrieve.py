@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 def get_data():
     load_dotenv()
     client = MongoClient(os.getenv("MONGO_URI"))
-    collection = client["grouptripAdmin"]["groupTrips"]
+    collection = client["groupTrips"]["groupTrips"]
 
     latest = collection.find_one({}, sort=[("createdAt", DESCENDING)])
     res = {}

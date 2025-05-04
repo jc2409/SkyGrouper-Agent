@@ -133,4 +133,4 @@ def plan_trip():
         return jsonify(error=str(exc)), 500
 
 if __name__ == "__main__":
-    app.run(port=5000, debug=True)
+    app.run(port=6000, debug=True)
