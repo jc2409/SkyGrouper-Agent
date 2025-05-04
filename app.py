@@ -5,8 +5,10 @@ from flask import Flask, request, jsonify
 from shortlister import ShortlisterSync
 from agent_helpers import ask_agent
 from data_retrieve import get_data
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, origins='http://localhost:5173')
 scl = ShortlisterSync()
 
 def _parse_iso(d: str) -> date:
@@ -133,4 +135,4 @@ def plan_trip():
         return jsonify(error=str(exc)), 500
 
 if __name__ == "__main__":
-    app.run(port=6000, debug=True)
+    app.run(port=7000, debug=True)
