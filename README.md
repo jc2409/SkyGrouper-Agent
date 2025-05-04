@@ -4,7 +4,7 @@
 
 **SkyGrouper** is a MCP-based AI-Agent service that suggests optimal travel destinations and flight itineraries for a group of travelers departing from different airports. It combines user interests with budget constraints and leverages an Agent for detailed planning.
 
-![SkyGrouper Demo Video](./images/demo.mkv)
+![SkyGrouper Demo Video](https://youtu.be/NVLeeUmcm3M?si=nqAtY7XjUKKu7jq3)
 
 ## Features
 
