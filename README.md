@@ -4,6 +4,7 @@
 
 ## Features
 
+* SkyScanner MCP Server
 * Shortlisting of candidate cities based on group interests
 * Concurrent LLM-powered destination overview and flight plan generation
 * Multi-origin support with individual budgets
