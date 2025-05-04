@@ -1,0 +1,3 @@
+[submodule "page/SkyGrouper"]
+	path = page/SkyGrouper
+	url = https://github.com/joelcalm/SkyGrouper/tree/master
