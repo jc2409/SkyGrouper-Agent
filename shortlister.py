@@ -67,8 +67,8 @@ class ShortlisterSync:
 
 if __name__ == "__main__":
     sample_group = [
-        {"username":"Andrew","interests":["culture","mountain"]},
-        {"username":"Taya","interests":["beach","party","nightlife"]},
+        {"interests":["culture","mountain"]},
+        {"interests":["beach","party","nightlife"]},
     ]
 
     scl = ShortlisterClient()

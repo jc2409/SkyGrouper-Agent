@@ -12,9 +12,9 @@ from agents.model_settings import ModelSettings
 from dotenv import load_dotenv
 from agents import set_default_openai_key
 from flask import Flask, request
+
 app = Flask(__name__)
 
-@app.route('/generate', methods = ['GET','POST'])
 async def run(mcp_server: MCPServer):
     load_dotenv()
     api_key = os.environ.get("OPENAI_API_KEY")

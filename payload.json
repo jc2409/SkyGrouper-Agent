@@ -1,0 +1,14 @@
+{
+    "departures": [
+      { "airport": "LHR", "budget": 1500 },
+      { "airport": "KOR", "budget": 1500 },
+      { "airport": "BCN", "budget": 1500 }
+    ],
+    "start_date": "2025-06-01",
+    "end_date":   "2025-06-10",
+    "group_profiles": [
+      { "interests": ["culture", "mountain"] },
+      { "interests": ["beach", "party", "nightlife"] }
+    ]
+}
+  

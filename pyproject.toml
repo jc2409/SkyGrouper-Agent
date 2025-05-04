@@ -12,4 +12,5 @@ dependencies = [
     "openai-agents>=0.0.14",
     "python-dotenv>=1.1.0",
     "requests>=2.32.3",
+    "pymongo>=4.12.1",
 ]
